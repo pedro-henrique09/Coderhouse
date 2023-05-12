@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculadora</title>
+  </head>
+  <body>
+    <h1>Calculadora Simples</h1>
+
+    <form>
+      <input type="text" id="resultado" name="resultado" readonly />
+
+      <table>
+        <tr>
+          <td><input type="button" value="1" onclick="adicionar('1')" /></td>
+          <td><input type="button" value="2" onclick="adicionar('2')" /></td>
+          <td><input type="button" value="3" onclick="adicionar('3')" /></td>
+          <td><input type="button" value="+" onclick="adicionar('+')" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="4" onclick="adicionar('4')" /></td>
+          <td><input type="button" value="5" onclick="adicionar('5')" /></td>
+          <td><input type="button" value="6" onclick="adicionar('6')" /></td>
+          <td><input type="button" value="-" onclick="adicionar('-')" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="7" onclick="adicionar('7')" /></td>
+          <td><input type="button" value="8" onclick="adicionar('8')" /></td>
+          <td><input type="button" value="9" onclick="adicionar('9')" /></td>
+          <td><input type="button" value="*" onclick="adicionar('*')" /></td>
+        </tr>
+        <tr>
+          <td><input type="button" value="C" onclick="limpar()" /></td>
+          <td><input type="button" value="0" onclick="adicionar('0')" /></td>
+          <td><input type="button" value="=" onclick="calcular()" /></td>
+          <td><input type="button" value="/" onclick="adicionar('/')" /></td>
+        </tr>
+      </table>
+    </form>
+
+    <script>
+      function adicionar(valor) {
+        document.getElementById("resultado").value += valor;
+      }
+
+      function limpar() {
+        document.getElementById("resultado").value = "";
+      }
+
+      function calcular() {
+        var resultado = eval(document.getElementById("resultado").value);
+        document.getElementById("resultado").value = resultado;
+      }
+    </script>
+  </body>
+</html>
